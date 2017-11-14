@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-1.11.1.min.js" ></script>
+		<script>
+			$(document).ready(function() {
+				$("div").css({
+					"width":"500px",
+					"height":"500px",
+					"background":"gold",
+					"display":"none"
+				});
+				$("button").eq(0).click(function() {
+					$("div").show(1000,function() {
+						alert("动画结束")
+					});
+					//$("div").show("slow");
+				});
+				$("button:last").click(function() {
+					$("div").hide(1000,function() {
+						alert("gg");
+					});
+				});
+			});
+			
+		</script>
+	</head>
+	<body>
+		<button>显示</button>
+		<button>隐藏</button>
+		<div></div>
+	</body>
+</html>

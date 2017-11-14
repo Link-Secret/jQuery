@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.wrap {
+				background: url(imgs/bg.jpg) no-repeat center center;
+				width: 330px;
+				height: 30px;
+				margin: 100px auto 0;
+				padding-left: 10px;
+			}
+			ul {
+				list-style: none;
+			}
+			.wrap li {
+				float: left;  
+	/*之所以二级元素会在一级元素下面，是因为没有高，只有宽，被孩子元素撑起来的*/
+			    
+			}
+			.wrap li ul {
+				display: none;
+			}
+			.wrap a {
+				width: 100px;
+				display: block;
+				text-decoration: none;
+				color: black;
+				background: url(imgs/libg.jpg) no-repeat center center;
+			    height: 30px;
+			    margin-right: 10px;
+			    line-height: 30px;
+			    text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="../../jquery-1.11.1.js" ></script>
+		<script>
+			$(document).ready(function() {
+				$(".wrap li").mouseenter(function() {
+					$(this).children("ul").show(/*1900*/);
+				});
+				$(".wrap li").mouseleave(function() {
+					$(this).children("ul").hide(/*2000*/);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li>
+				  <a href="#">第一级菜单1</a>
+					<ul>
+						<li>
+							<a href="#">第二级菜单11</a>
+							<a href="#">第二级菜单12</a>
+							<a href="#">第二级菜单13</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">第一级菜单2</a>
+					<ul>
+						<li>
+							<a href="#">第二级菜单21</a>
+							<a href="#">第二级菜单22</a>
+							<a href="#">第二级菜单23</a>
+							<a href="#">第二级菜单24</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">第一级菜单3</a>
+					<ul>
+						<li>
+							<a href="#">第二级菜单31</a>
+							<a href="#">第二级菜单32</a>
+							<a href="#">第二级菜单33</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

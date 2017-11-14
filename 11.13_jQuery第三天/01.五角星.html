@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.commit {
+				list-style: none;
+			}
+			li {
+				float: left;
+				font-size: 40px;
+				color: teal;
+			}
+		</style>
+		<script type="text/javascript" src="../jquery-1.11.1.min.js" ></script>
+		<script>
+			$(document).ready(function() {
+				var wjx_sel = "★",wjx_none = "☆";
+				$(".commit").on("mouseenter","li",function() {
+					/*$(this).text(wjx_sel).prevAll().text(wjx_sel);
+					$(this).nextAll().text(wjx_none);*/
+					$(this).text(wjx_sel).prevAll()
+					       .text(wjx_sel)
+					       .end()
+					       .nextAll()
+					       .text(wjx_none);
+				}).on("click","li",function() {
+					$(this)
+					.addClass("checked")
+					.siblings()
+					.removeClass("checked");
+				}).on("mouseleave",function() {
+					 $("li").text(wjx_none);
+					 $(".checked").text(wjx_sel)
+					             .prevAll()
+					             .text(wjx_sel)
+					             .end()
+					             .nextAll()
+					             .text(wjx_none);
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<ul class="commit">
+			<li>☆</li>
+			<li>☆</li>
+			<li>☆</li>
+			<li>☆</li>
+			<li>☆</li>
+		</div>
+	</body>
+</html>
